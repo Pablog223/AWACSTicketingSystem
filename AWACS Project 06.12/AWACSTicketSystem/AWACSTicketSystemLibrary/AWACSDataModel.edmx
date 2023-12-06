@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AWACSDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AWACSDataModelStoreContainer">
+    <EntitySet Name="UserSet" EntityType="AWACSDataModel.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketSet" EntityType="AWACSDataModel.Store.TicketSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="Responsible" Association="AWACSDataModel.Store.Responsible">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+    <AssociationSet Name="Creator" Association="AWACSDataModel.Store.Creator">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkerId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Department" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EMail" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TicketSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TicketId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Solution" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DateObserved" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PlannedEndDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Progress" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ResponsibleId" Type="int" Nullable="false" />
+    <Property Name="CreatedId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Responsible">
+    <End Role="User" Type="AWACSDataModel.Store.UserSet" Multiplicity="1" />
+    <End Role="Ticket" Type="AWACSDataModel.Store.TicketSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="ResponsibleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Creator">
+    <End Role="User" Type="AWACSDataModel.Store.UserSet" Multiplicity="1" />
+    <End Role="Ticket" Type="AWACSDataModel.Store.TicketSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="CreatedId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AWACSDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="AWACSDataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserSet" EntityType="AWACSDataModel.User" />
+          <EntitySet Name="TicketSet" EntityType="AWACSDataModel.Ticket" />
+          <AssociationSet Name="Responsible" Association="AWACSDataModel.Responsible">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="Ticket" EntitySet="TicketSet" />
+          </AssociationSet>
+          <AssociationSet Name="Creator" Association="AWACSDataModel.Creator">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="Ticket" EntitySet="TicketSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkerId" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Surname" Type="String" Nullable="false" />
+          <Property Name="Department" Type="String" Nullable="true" />
+          <Property Name="EMail" Type="String" Nullable="true" />
+          <NavigationProperty Name="Responsible" Relationship="AWACSDataModel.Responsible" FromRole="User" ToRole="Ticket" />
+          <NavigationProperty Name="Creator" Relationship="AWACSDataModel.Creator" FromRole="User" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TicketId" Type="String" Nullable="false" />
+          <Property Name="Category" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="Solution" Type="String" Nullable="true" />
+          <Property Name="DateObserved" Type="String" Nullable="true" />
+          <Property Name="PlannedEndDate" Type="String" Nullable="true" />
+          <Property Name="Progress" Type="String" Nullable="true" />
+          <Property Name="Status" Type="String" Nullable="true" />
+          <NavigationProperty Name="ResponsibleFor" Relationship="AWACSDataModel.Responsible" FromRole="Ticket" ToRole="User" />
+          <Property Name="ResponsibleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="IsCreated" Relationship="AWACSDataModel.Creator" FromRole="Ticket" ToRole="User" />
+          <Property Name="CreatedId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="Responsible">
+          <End Type="AWACSDataModel.User" Role="User" Multiplicity="1" />
+          <End Type="AWACSDataModel.Ticket" Role="Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="ResponsibleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Creator">
+          <End Type="AWACSDataModel.User" Role="User" Multiplicity="1" />
+          <End Type="AWACSDataModel.Ticket" Role="Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="CreatedId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AWACSDataModelStoreContainer" CdmEntityContainer="AWACSDataModelContainer">
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AWACSDataModel.User)">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AWACSDataModel.Ticket)">
+        <MappingFragment StoreEntitySet="TicketSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Solution" ColumnName="Solution" />
+          <ScalarProperty Name="DateObserved" ColumnName="DateObserved" />
+          <ScalarProperty Name="PlannedEndDate" ColumnName="PlannedEndDate" />
+          <ScalarProperty Name="Progress" ColumnName="Progress" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ResponsibleId" ColumnName="ResponsibleId" />
+          <ScalarProperty Name="CreatedId" ColumnName="CreatedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

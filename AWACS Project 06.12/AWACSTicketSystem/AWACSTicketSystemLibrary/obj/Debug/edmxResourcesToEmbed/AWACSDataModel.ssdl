@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AWACSDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AWACSDataModelStoreContainer">
+    <EntitySet Name="UserSet" EntityType="AWACSDataModel.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketSet" EntityType="AWACSDataModel.Store.TicketSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="Responsible" Association="AWACSDataModel.Store.Responsible">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+    <AssociationSet Name="Creator" Association="AWACSDataModel.Store.Creator">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkerId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Department" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EMail" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TicketSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TicketId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Solution" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DateObserved" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PlannedEndDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Progress" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ResponsibleId" Type="int" Nullable="false" />
+    <Property Name="CreatedId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Responsible">
+    <End Role="User" Type="AWACSDataModel.Store.UserSet" Multiplicity="1" />
+    <End Role="Ticket" Type="AWACSDataModel.Store.TicketSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="ResponsibleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Creator">
+    <End Role="User" Type="AWACSDataModel.Store.UserSet" Multiplicity="1" />
+    <End Role="Ticket" Type="AWACSDataModel.Store.TicketSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="CreatedId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

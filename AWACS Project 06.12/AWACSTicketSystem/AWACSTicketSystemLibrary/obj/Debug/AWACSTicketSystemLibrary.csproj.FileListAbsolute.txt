@@ -1,0 +1,12 @@
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\bin\Debug\AWACSTicketSystemLibrary.dll.config
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\bin\Debug\AWACSTicketSystemLibrary.dll
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\bin\Debug\AWACSTicketSystemLibrary.pdb
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\bin\Debug\EntityFramework.dll
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\bin\Debug\EntityFramework.xml
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\obj\Debug\AWACSTicketSystemLibrary.csproj.AssemblyReference.cache
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\obj\Debug\AWACSTicketSystemLibrary.csproj.CoreCompileInputs.cache
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\obj\Debug\AWACSTicketSystemLibrary.csproj.CopyComplete
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\obj\Debug\AWACSTicketSystemLibrary.dll
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystemLibrary\obj\Debug\AWACSTicketSystemLibrary.pdb
