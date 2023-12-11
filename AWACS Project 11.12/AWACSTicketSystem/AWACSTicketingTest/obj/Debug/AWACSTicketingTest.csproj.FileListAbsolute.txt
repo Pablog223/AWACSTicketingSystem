@@ -1,0 +1,11 @@
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\bin\Debug\AWACSTicketingTest.exe.config
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\bin\Debug\AWACSTicketingTest.exe
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\bin\Debug\AWACSTicketingTest.pdb
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\obj\Debug\AWACSTicketingTest.csproj.AssemblyReference.cache
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\obj\Debug\AWACSTicketingTest.csproj.CoreCompileInputs.cache
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\obj\Debug\AWACSTicketingTest.exe
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\obj\Debug\AWACSTicketingTest.pdb
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\obj\Debug\AWACSTicketingTest.csproj.CopyComplete
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\bin\Debug\AWACSTicketSystemLibrary.dll
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\bin\Debug\AWACSTicketSystemLibrary.pdb
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketingTest\bin\Debug\AWACSTicketSystemLibrary.dll.config
