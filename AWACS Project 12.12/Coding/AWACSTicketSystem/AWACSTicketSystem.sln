@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWACSTicketWeb", "AWACSTicketWeb\AWACSTicketWeb.csproj", "{5D3510C2-5D8B-4243-A3DA-A75A236BD7A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWACSTicketLibrary", "AWACSTicketLibrary\AWACSTicketLibrary.csproj", "{FFB5182D-22E7-42AC-9063-A772137C1FD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D3510C2-5D8B-4243-A3DA-A75A236BD7A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3510C2-5D8B-4243-A3DA-A75A236BD7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3510C2-5D8B-4243-A3DA-A75A236BD7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3510C2-5D8B-4243-A3DA-A75A236BD7A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFB5182D-22E7-42AC-9063-A772137C1FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFB5182D-22E7-42AC-9063-A772137C1FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFB5182D-22E7-42AC-9063-A772137C1FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFB5182D-22E7-42AC-9063-A772137C1FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2515FC64-6E0E-4E25-ADD6-1EE371BEF740}
+	EndGlobalSection
+EndGlobal
