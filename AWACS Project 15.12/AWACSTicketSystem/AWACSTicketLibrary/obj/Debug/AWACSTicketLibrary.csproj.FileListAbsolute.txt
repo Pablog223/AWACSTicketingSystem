@@ -1,0 +1,12 @@
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\bin\Debug\AWACSTicketLibrary.dll.config
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\bin\Debug\AWACSTicketLibrary.dll
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\bin\Debug\AWACSTicketLibrary.pdb
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\bin\Debug\EntityFramework.dll
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\bin\Debug\EntityFramework.xml
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\obj\Debug\AWACSTicketLibrary.csproj.AssemblyReference.cache
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\obj\Debug\AWACSTicketLibrary.csproj.CoreCompileInputs.cache
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\obj\Debug\AWACSTicketLibrary.csproj.CopyComplete
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\obj\Debug\AWACSTicketLibrary.dll
+C:\Pablo\THI\9. Semester\Software Engineering und KI\AWACS Project\Coding\AWACSTicketSystem\AWACSTicketSystem\AWACSTicketLibrary\obj\Debug\AWACSTicketLibrary.pdb
