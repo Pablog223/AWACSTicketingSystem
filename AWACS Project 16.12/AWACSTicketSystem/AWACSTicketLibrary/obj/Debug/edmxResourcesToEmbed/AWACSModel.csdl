@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AWACSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="AWACSModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="WorkerSet" EntityType="AWACSModel.Worker" />
+    <EntitySet Name="TicketSet" EntityType="AWACSModel.Ticket" />
+    <AssociationSet Name="ToCreate" Association="AWACSModel.ToCreate">
+      <End Role="Worker" EntitySet="WorkerSet" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+    <AssociationSet Name="ToResponsible" Association="AWACSModel.ToResponsible">
+      <End Role="Worker" EntitySet="WorkerSet" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Worker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkerId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Surname" Type="String" Nullable="false" />
+    <Property Name="eMail" Type="String" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" />
+    <Property Name="Department" Type="String" Nullable="false" />
+    <Property Name="AdminRole" Type="Boolean" Nullable="false" />
+    <Property Name="UserRole" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="IsCreator" Relationship="AWACSModel.ToCreate" FromRole="Worker" ToRole="Ticket" />
+    <NavigationProperty Name="IsResponsible" Relationship="AWACSModel.ToResponsible" FromRole="Worker" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketId" Type="String" Nullable="false" />
+    <Property Name="Category" Type="String" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" />
+    <Property Name="Solution" Type="String" Nullable="false" />
+    <Property Name="DateObserved" Type="DateTime" Nullable="false" />
+    <Property Name="PlannedEndDate" Type="DateTime" Nullable="false" />
+    <Property Name="Progress" Type="String" Nullable="false" />
+    <Property Name="Status" Type="String" Nullable="false" />
+    <NavigationProperty Name="Creator" Relationship="AWACSModel.ToCreate" FromRole="Ticket" ToRole="Worker" />
+    <Property Name="CreatorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Responsible" Relationship="AWACSModel.ToResponsible" FromRole="Ticket" ToRole="Worker" />
+    <Property Name="ResponsibleId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="ToCreate">
+    <End Type="AWACSModel.Worker" Role="Worker" Multiplicity="1" />
+    <End Type="AWACSModel.Ticket" Role="Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="CreatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ToResponsible">
+    <End Type="AWACSModel.Worker" Role="Worker" Multiplicity="1" />
+    <End Type="AWACSModel.Ticket" Role="Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="ResponsibleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

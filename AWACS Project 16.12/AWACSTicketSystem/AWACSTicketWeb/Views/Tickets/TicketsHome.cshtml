@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AWACSTicketLibrary.Ticket>
+
+@{
+    ViewBag.Title = "Tickets Home";
+}
+
+<h2>These are all the tickets</h2><p></p>
+<h4>If you wish to work on them, please register!</h4>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Solution)
+        </th>
+        <th>
+            Creator
+        </th>
+        <th>
+            Responsible
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Solution)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Creator.Name)
+                @Html.DisplayFor(modelItem => item.Creator.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Responsible.Name)
+                @Html.DisplayFor(modelItem => item.Responsible.Surname)
+            </td>
+        </tr>
+    }
+
+</table>
