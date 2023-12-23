@@ -1,0 +1,109 @@
+﻿﻿@model AWACSTicketLibrary.Ticket
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create your ticket</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2 col-sm-12" style="font-weight: bold;">TicketId</label>
+            <div class="col">
+                @Html.EditorFor(model => model.TicketId, new { htmlAttributes = new { @class = "form-control form-control-sm" } })The Ticket Id must begin with the first letter of the category
+                @Html.ValidationMessageFor(model => model.TicketId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2 col-sm-12" style="font-weight: bold;">Category</label>
+            <div class="col-md-10 col-sm-12">
+                @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2 col-sm-12" style="font-weight: bold;">Ticket Description</label>
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", style = " min-width:500px; max-width:100%;min-height:80px;height:100%;width:100%;" })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2 col-sm-12" style="font-weight: bold;">Solution proposal</label>
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Solution, new { @class = "form-control", style = " min-width:500px; max-width:100%;min-height:80px;height:100%;width:100%;" })
+                @Html.ValidationMessageFor(model => model.Solution, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" style="font-weight: bold;">Which date was the problem observed?</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateObserved, new { htmlAttributes = new { @type = "date", @class = "form-control datepicker" } })
+                @Html.ValidationMessageFor(model => model.DateObserved, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" style="font-weight: bold;">Which date is the planned end date?</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PlannedEndDate, new { htmlAttributes = new { @type = "date", @class = "form-control datepicker" } })
+                @Html.ValidationMessageFor(model => model.PlannedEndDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" style="font-weight: bold;">What progress has been made?</label>
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Progress, new { @class = "form-control", style = " min-width:100px; max-width:100%;min-height:50px;height:100%;width:100%;" })
+                @Html.ValidationMessageFor(model => model.Progress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" style="font-weight: bold;">What is the status?</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control form-control-md" } })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" style="font-weight: bold;">Ticket creator</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CreatorId, (SelectList)ViewBag.CreatorId, htmlAttributes: new { @class = "form-control", style = "width: 100%;" })
+                @Html.ValidationMessageFor(model => model.CreatorId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" style="font-weight: bold;">Ticket responsible</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ResponsibleId, (SelectList)ViewBag.ResponsibleId, htmlAttributes: new { @class = "form-control", style = "width: 100%;" })
+                @Html.ValidationMessageFor(model => model.ResponsibleId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <p></p>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-xl-10">
+                <input type="submit" value="Create &#9754;" class="btn btn-success" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
