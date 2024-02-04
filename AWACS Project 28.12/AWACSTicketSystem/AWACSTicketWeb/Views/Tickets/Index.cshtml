@@ -1,0 +1,74 @@
+﻿﻿@model IEnumerable<AWACSTicketLibrary.Ticket>
+
+@{
+    ViewBag.Title = "List of tickets";
+}
+
+<body>
+    <h2>Ticket List</h2>
+
+    <p></p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Solution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlannedEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Progress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                Responsible
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Solution)
+                </td>
+                <td>
+                    @item.PlannedEndDate.ToString(string.Format("dd/MM/yyyy"))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Progress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Responsible.Name)
+                    @Html.DisplayFor(modelItem => item.Responsible.Surname)
+                </td>
+                <td>
+                    <button class="btn btn-info" onclick="location.href= '@Url.Action("Details","Tickets", new { id = item.Id })'">Details</button> |
+                    <button class="btn btn-warning" onclick="location.href= '@Url.Action("Edit","Tickets", new { id = item.Id })'">Edit</button> |
+                    <button class="btn btn-danger" onclick="location.href= '@Url.Action("Delete","Tickets", new { id = item.Id })'">Delete</button> |
+                </td>
+            </tr>
+        }
+    </table>
+    <p></p>
+    <div>
+        <p><button class="btn btn-primary btn-md" onclick="location.href= '@Url.Action("Create","Tickets")'">Create a new ticket &#9997;</button></p>
+    </div>
+</body>

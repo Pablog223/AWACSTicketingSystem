@@ -1,0 +1,60 @@
+﻿@model AWACSTicketLibrary.Worker
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eMail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+    </dl>
+</div>
+<p>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-warning" onclick="location.href= '@Url.Action("Edit","Workers", new {id=Model.Id})'">Edit &#9754;</button> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</p>

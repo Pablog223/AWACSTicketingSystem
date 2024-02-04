@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b8a76f365df74f2fb5c19739072d45a7" Name="Diagram1" >
+        <EntityTypeShape EntityType="AWACSModel.Worker" Width="1.5" PointX="2.625" PointY="1.125" />
+        <EntityTypeShape EntityType="AWACSModel.Ticket" Width="1.5" PointX="6.375" PointY="1" />
+        <AssociationConnector Association="AWACSModel.ToCreate" />
+        <AssociationConnector Association="AWACSModel.ToResponsible" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
